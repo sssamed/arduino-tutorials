@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": 47.4, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -246.17, "left": 188.8, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -24,
+      "left": 325.85,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot1",
+      "top": -74.7,
+      "left": 58.6,
+      "rotate": 180,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "lcd1:A", "r1:1", "red", [ "v0" ] ],
+    [ "r1:2", "uno:5V", "red", [ "v200.4", "h-147.8" ] ],
+    [ "lcd1:VDD", "uno:5V", "red", [ "v19.2", "h-211.1", "v307.2", "h188.2" ] ],
+    [ "lcd1:VSS", "uno:GND.2", "black", [ "v9.6", "h-211.2", "v326.4", "h207.3" ] ],
+    [ "lcd1:RS", "uno:12", "gold", [ "v38.4", "h-67.4" ] ],
+    [ "uno:GND.1", "lcd1:RW", "black", [ "v-67.2", "h96.4" ] ],
+    [ "lcd1:E", "uno:11", "limegreen", [ "v48", "h-77.4" ] ],
+    [ "lcd1:D7", "uno:2", "cyan", [ "v96", "h-61.4" ] ],
+    [ "lcd1:D6", "uno:3", "cyan", [ "v86.4", "h-61.4" ] ],
+    [ "lcd1:D5", "uno:4", "cyan", [ "v76.8", "h-61.4" ] ],
+    [ "lcd1:D4", "uno:5", "cyan", [ "v67.2", "h-61.4" ] ],
+    [ "pot1:GND", "uno:GND.2", "black", [ "v-38.4", "h-96", "v326.4", "h211.2" ] ],
+    [ "uno:GND.3", "lcd1:K", "black", [ "v28.7", "h138.4" ] ],
+    [ "pot1:VCC", "uno:5V", "red", [ "v-28.8", "h-66.4", "v307.2", "h192" ] ],
+    [ "pot1:SIG", "lcd1:V0", "green", [ "v-19.2", "h144.4" ] ]
+  ],
+  "dependencies": {}
+}
